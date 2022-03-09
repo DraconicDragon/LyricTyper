@@ -13,11 +13,11 @@ namespace Keyboard
             Console.WriteLine("Name the program in which you want to open to type the lyrics in: ");
             
             string pName = Console.ReadLine().ToLower();
-            switchDiscord(pName);
-            sendLyrics(pName);
+            SwitchDiscord(pName);
+            SendLyrics(pName);
         }
 
-        static void switchDiscord(string programName)
+        static void SwitchDiscord(string programName)
         {
             [DllImport("user32.dll")]
             static extern void SwitchToThisWindow(IntPtr hWnd, bool turnon);
@@ -33,7 +33,7 @@ namespace Keyboard
             }
         }
 
-        static void sendLyrics(string programName)
+        static void SendLyrics(string programName)
         {
             #region lyrics
             string lyrics = "Somebody once told me the world is gonna roll me " +
@@ -92,7 +92,7 @@ namespace Keyboard
             int indx = 0;
             while (true)
             {
-                if (getWndwTitle(programName))
+                if (GetWndwTitle(programName))
                 {
                     var simulator = new InputSimulator();
                     simulator.Keyboard.TextEntry(lyrics[indx]);
@@ -106,7 +106,7 @@ namespace Keyboard
         }
 
 
-        static bool getWndwTitle(string programName)
+        static bool GetWndwTitle(string programName)
         {
             [DllImport("user32.dll")]
             static extern IntPtr GetForegroundWindow();
