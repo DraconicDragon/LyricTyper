@@ -1,1 +1,1 @@
-Keyboard
+I made this purely out of boredom and wanted to see how it looks like when a program types out All Star lyrics into Discord for me.

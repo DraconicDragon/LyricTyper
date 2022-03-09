@@ -126,7 +126,6 @@ namespace Keyboard
             if (GetWindowText(handle, stringBuilder, intLength) > 0)
             {
                 strTitle = stringBuilder.ToString().ToLower();
-                Console.WriteLine(programName);
                 if (strTitle.Contains(programName))
                 {
                     return true;
